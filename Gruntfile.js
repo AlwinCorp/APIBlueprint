@@ -22,11 +22,20 @@ module.exports = function(grunt) {
             }
         },
 
+        apidoc: {
+            myapp: {
+                src: "src/",
+                dest: "dist/doc/"
+            }
+        }
+
 	});
 
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-express-runner');
+    grunt.loadNpmTasks('grunt-apidoc')
 
+    grunt.registerTask('doc', ['apidoc']);
 	grunt.registerTask('dev', ['watch', 'expressrunner']);
     grunt.registerTask('default', ['dev']);
 }
