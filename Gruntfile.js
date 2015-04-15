@@ -6,7 +6,7 @@ module.exports = function(grunt) {
 
         watch: {
             scripts: {
-                files: ['./src/app.js', 'Gruntfile.js'],
+                files: ['./src/**/*.js', 'Gruntfile.js'],
                 tasks: ['expressrunner'],
                 options: {
                     interrupt: true,
@@ -18,7 +18,7 @@ module.exports = function(grunt) {
         expressrunner: {
             options: {
                 script: './src/server.js',
-                debug: 'app'
+                debug: '*'
             }
         },
 
